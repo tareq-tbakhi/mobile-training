@@ -1,16 +1,20 @@
 import { Stack } from "expo-router"; 
-import { View, Text, StyleSheet } from "react-native";
-
+import { View, Text, StyleSheet, useColorScheme } from "react-native";
+import { Colors } from "../constants/colors";
 
 const RootLayout = () => {
+
+    const colorScheme = useColorScheme();
+    const theme = Colors[colorScheme] ?? Colors.light;
+
   return (
         <Stack 
             screenOptions={{
-                headerStyle: { backgroundColor: "#ddd" },
-                headerTintColor: "#000"
+                headerStyle: { backgroundColor: theme.navBackground },
+                headerTintColor: theme.title
             }}>  
             
-            <Stack.Screen name="index" options={{title: "Home", headerShown: false}} />
+            <Stack.Screen name="index" options={{title: "Home"}} />
             <Stack.Screen name="about" options={{title: "About"}} />
             <Stack.Screen name="contact" options={{title: "Contact"}} />
         </Stack>  
