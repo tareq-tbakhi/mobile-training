@@ -1,56 +1,41 @@
 import { View, Text, StyleSheet ,Image} from "react-native";
 import logo from '../assets/img/logo_light.png';
 import { Link } from 'expo-router';
+import ThemedView from "../components/ThemedView"
+import ThemedText from "../components/ThemedText"
+import ThemedLogo from "../components/ThemedLogo"
+import Spacer from "../components/Spacer"
+
 
 export default function Index() {
+
+    
     return (
-        <View style={styles.container}>
+        <ThemedView style={styles.container}>
 
-            <Image source={logo} style={styles.logo} />
-            <Text style={styles.text}>Welcome to UOE application</Text>
+            <ThemedLogo />
+            <Spacer />
+            <ThemedText style={styles.title} title={true}>The Number 1</ThemedText>
 
-            <Link href="/about" style={styles.link}>About</Link>
-            <Link href="/contact" style={styles.link}>Contact</Link>
+            <ThemedText style={{marginTop: 10, marginBottom: 30}}>
+                Reading List App
+            </ThemedText>
 
-        </View>
+            <Link href="/login" style={styles.link}>
+            <ThemedText>Login</ThemedText>
+            </Link>
+
+            <Link href="/register" style={styles.link}>
+            <ThemedText>Register</ThemedText>
+            </Link>
+
+        </ThemedView>
     );
 }   
 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    text: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: 'blue',
-        //marginBottom: 50,
-        color: '#000',
-    },
-    card: {
-        width: '80%',
-        height: 300,
-        backgroundColor: '#9e9e9e',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 15,
-        boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.5)',
-   
-    },
-    logo: {
-        width: 300,
-        height: 130,
-        //marginBottom: 50,
-        resizeMode: 'contain',
-        //backgroundColor: '#acacac',
-        marginVertical: 50,
-        opacity: 1,
-    },
-    link: {
-        marginVertical: 20,
-        borderBottomWidth: 1,
-    },
-});
+  container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  title:     { fontWeight: 'bold', fontSize: 18 },
+  link:      { marginVertical: 10, borderBottomWidth: 1 }
+})
