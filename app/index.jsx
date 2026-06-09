@@ -22,11 +22,15 @@ export default function Index() {
             </ThemedText>
 
             <Link href="/login" style={styles.link}>
-            <ThemedText>Login</ThemedText>
+            <ThemedText>Login Page</ThemedText>
             </Link>
 
             <Link href="/register" style={styles.link}>
-            <ThemedText>Register</ThemedText>
+            <ThemedText>Register Page</ThemedText>
+            </Link>
+
+             <Link href="/profile" style={styles.link}>
+            <ThemedText>Profile Page</ThemedText>
             </Link>
 
         </ThemedView>
