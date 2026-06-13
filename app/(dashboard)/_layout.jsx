@@ -29,7 +29,8 @@ export default function DashboardLayout() {
         <Tabs.Screen 
             name="profile" 
             options={{ title: "Profile",
-                tabBarIcon: ({focused}) => <Ionicons 
+                tabBarIcon: ({focused}) => 
+                <Ionicons 
                     name={focused ? "person" : "person-outline"} 
                     color={focused ? theme.iconColorFocused : theme.iconColor}
                     size={24} />
@@ -37,7 +38,8 @@ export default function DashboardLayout() {
         <Tabs.Screen 
             name="books" 
             options={{ title: "Books",
-                tabBarIcon:({focused}) => <Ionicons 
+                tabBarIcon:({focused}) => 
+                <Ionicons 
                     name={focused ? "book" : "book-outline"} 
                     color={focused ? theme.iconColorFocused : theme.iconColor}
                     size={24} />
@@ -46,7 +48,8 @@ export default function DashboardLayout() {
             name="create" 
             options={{ 
                 title: "Create",
-                tabBarIcon: ({focused}) => <Ionicons 
+                tabBarIcon: ({focused}) => 
+                <Ionicons 
                     name={focused ? "add" : "add-outline"} 
                     color={focused ? theme.iconColorFocused : theme.iconColor}
                     size={24} />
