@@ -8,6 +8,7 @@ import ThemedButton from '../../components/ThemedButton'
 import ThemedTextInput from '../../components/ThemedTextInput'
 import { useState } from 'react'
 import { TouchableWithoutFeedback } from 'react-native'
+import { useUser } from '../../hooks/useUser'
 
 
 const Register = () => {
@@ -15,9 +16,13 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { register } = useUser()
+
   const handleSubmit = async () => {
-    console.log('register form submitted', { email, password })
+    try { await register(email, password) }
+    catch (error) {}
   }
+
 
   return (
     <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>

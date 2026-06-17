@@ -2,6 +2,7 @@ import { Stack } from 'expo-router';
 import {useColorScheme} from 'react-native';
 import { Colors } from '../constants/Colors';
 import {StatusBar} from 'expo-status-bar';
+import {UserProvider} from '../contexts/UserContext';
 
 export default function RootLayout() {
 
@@ -12,7 +13,7 @@ export default function RootLayout() {
 
 
     return (
-        <>
+        <UserProvider>
         <StatusBar style="auto" />
         <Stack 
             screenOptions={{
@@ -28,7 +29,7 @@ export default function RootLayout() {
             <Stack.Screen name="(dashboard)" options={{headerShown: false }} />
 
         </Stack>
-        </>
+        </UserProvider>
     );
 }
 
