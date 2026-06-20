@@ -31,12 +31,14 @@ async function register(email, password) {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password)
     setUser(res.user)   // Firebase signs in automatically
-  } catch (error) { console.log(error.message) }
-}
+  } catch (error) {
+    throw Error(error.message)
+  }
+} 
 
 
 
-  async function logout() {
+async function logout() {
   await signOut(auth)
   setUser(null)
 }
