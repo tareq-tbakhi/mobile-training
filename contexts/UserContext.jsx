@@ -36,8 +36,6 @@ async function register(email, password) {
   }
 } 
 
-
-
 async function logout() {
   await signOut(auth)
   setUser(null)
@@ -51,6 +49,7 @@ useEffect(() => {
   })
   return unsubscribe          // stop listening when unmounted
 }, [])
+
 
   return (
     <UserContext.Provider value={{ user, authChecked, login, register, logout }}>

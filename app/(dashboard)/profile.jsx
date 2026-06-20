@@ -18,7 +18,7 @@ const Profile = () => {
 
       
       <ThemedText title={true} style={styles.heading}>
-        {user?.email}
+        {user.email}
       </ThemedText>
 
       <ThemedButton onPress={logout}>
