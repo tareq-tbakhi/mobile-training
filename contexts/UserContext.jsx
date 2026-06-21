@@ -52,7 +52,7 @@ useEffect(() => {
 
 
   return (
-    <UserContext.Provider value={{ user, authChecked, login, register, logout }}>
+    <UserContext.Provider value={{ user, login, register, logout, authChecked}}>
       {children}
     </UserContext.Provider>
   )
