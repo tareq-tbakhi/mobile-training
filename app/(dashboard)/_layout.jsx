@@ -14,6 +14,7 @@ export default function DashboardLayout() {
 
     <UserOnly>
     <Tabs
+
         screenOptions={{
             headerShown:false,
             tabBarStyle:{
@@ -53,6 +54,10 @@ export default function DashboardLayout() {
                     color={focused ? theme.iconColorFocused : theme.iconColor}
                     size={24} />
              }} />
+        
+        <Tabs.Screen name="books/[id]" options={{ href: null }} />
+
+             
 
     
 
